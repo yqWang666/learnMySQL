@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "learnMySQL.h"
 #include "learnMySQLDlg.h"
+#include "LoginDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -67,7 +68,8 @@ BOOL ClearnMySQLApp::InitInstance()
 	// 例如修改为公司或组织名
 	SetRegistryKey(_T("应用程序向导生成的本地应用程序"));
 
-	ClearnMySQLDlg dlg;
+	//ClearnMySQLDlg dlg;
+	CLoginDlg dlg;
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)
