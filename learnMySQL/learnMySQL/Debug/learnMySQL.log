@@ -1,0 +1,33 @@
+﻿生成启动时间为 2020/6/10 20:11:18。
+     1>项目“F:\learnMySQL\learnMySQL\learnMySQL\learnMySQL.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\learnMySQL.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         所有输出均为最新。
+         f:\VS2010\VS2010\install\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\learnMySQL.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt LoginDlg.cpp
+         LoginDlg.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _AFXDLL /l"0x0804" /IDebug\ /nologo /fo"Debug\learnMySQL.res" learnMySQL.rc 
+       ManifestResourceCompile:
+         所有输出均为最新。
+       Link:
+         f:\VS2010\VS2010\install\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\learnMySQL\learnMySQL\Debug\learnMySQL.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:"Debug\learnMySQL.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\learnMySQL\learnMySQL\Debug\learnMySQL.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\learnMySQL\learnMySQL\Debug\learnMySQL.lib" /MACHINE:X86 Debug\learnMySQL.res
+         Debug\learnMySQL.exe.embed.manifest.res
+         Debug\learnMySQL.obj
+         Debug\learnMySQLDlg.obj
+         Debug\LoginDlg.obj
+         Debug\stdafx.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\learnMySQL.exe.embed.manifest" /manifest Debug\learnMySQL.exe.intermediate.manifest f:\VS2010\VS2010\install\VC\Include\Manifest\dpiaware.manifest
+         所有输出均为最新。
+       LinkEmbedManifest:
+         所有输出均为最新。
+         learnMySQL.vcxproj -> F:\learnMySQL\learnMySQL\Debug\learnMySQL.exe
+       FinalizeBuildStatus:
+         正在删除文件“Debug\learnMySQL.unsuccessfulbuild”。
+         正在对“Debug\learnMySQL.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“F:\learnMySQL\learnMySQL\learnMySQL\learnMySQL.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.72

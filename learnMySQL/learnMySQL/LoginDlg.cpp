@@ -44,7 +44,8 @@ void CLoginDlg::OnBnClickedLiLi()
 {
 	// TODO: 在此添加控件通知处理程序代码
 	UpdateData(TRUE);
-	if (m_Li_user == "admin" && m_Li_password == "123456")
+	if (m_Li_user == "" && m_Li_password == "")
+	//if (m_Li_user == "admin" && m_Li_password == "123456")
 	{
 		CLoginDlg::OnOK();
 		ClearnMySQLDlg m;

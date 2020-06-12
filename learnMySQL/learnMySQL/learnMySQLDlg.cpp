@@ -6,6 +6,7 @@
 #include "learnMySQL.h"
 #include "learnMySQLDlg.h"
 #include "afxdialogex.h"
+#include "Ch_AddDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -63,6 +64,7 @@ BEGIN_MESSAGE_MAP(ClearnMySQLDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_Add, &ClearnMySQLDlg::OnBnClickedAdd)
 END_MESSAGE_MAP()
 
 
@@ -151,3 +153,12 @@ HCURSOR ClearnMySQLDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+
+void ClearnMySQLDlg::OnBnClickedAdd()
+{
+	// TODO: 在此添加控件通知处理程序代码
+	ClearnMySQLDlg::OnOK();
+	CCh_AddDlg m;
+	m.DoModal();
+}
