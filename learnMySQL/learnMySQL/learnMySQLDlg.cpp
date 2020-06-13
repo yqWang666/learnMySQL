@@ -58,6 +58,7 @@ ClearnMySQLDlg::ClearnMySQLDlg(CWnd* pParent /*=NULL*/)
 void ClearnMySQLDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_LIST1, m_StuInformation);
 }
 
 BEGIN_MESSAGE_MAP(ClearnMySQLDlg, CDialogEx)
@@ -100,6 +101,41 @@ BOOL ClearnMySQLDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
+
+	m_StuInformation.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);	// 整行选择、网格线
+	m_StuInformation.InsertColumn(0, _T("id"),	LVCFMT_LEFT, 0);
+	m_StuInformation.InsertColumn(1, _T("学号"), LVCFMT_LEFT, 100);	// 插入第2列的列名
+	m_StuInformation.InsertColumn(2, _T("姓名"), LVCFMT_LEFT, 100);	// 插入第3列的列名
+	m_StuInformation.InsertColumn(3, _T("性别"), LVCFMT_LEFT, 100);	// 插入第4列的列名
+	m_StuInformation.InsertColumn(4, _T("语文"), LVCFMT_LEFT, 100);	// 插入第5列的列名
+	m_StuInformation.InsertColumn(5, _T("数学"), LVCFMT_LEFT, 100);	// 插入第6列的列名
+	m_StuInformation.InsertColumn(6, _T("英语"), LVCFMT_LEFT, 100);	// 插入第7列的列名
+	m_StuInformation.InsertColumn(7, _T("物理"), LVCFMT_LEFT, 100);	// 插入第8列的列名
+	m_StuInformation.InsertColumn(8, _T("化学"), LVCFMT_LEFT, 100);	// 插入第9列的列名
+	m_StuInformation.InsertColumn(9, _T("生物"), LVCFMT_LEFT, 100);	// 插入第10列的列名
+	m_StuInformation.InsertColumn(10, _T("理综"), LVCFMT_LEFT, 100);// 插入第11列的列名
+	m_StuInformation.InsertColumn(11, _T("总分"), LVCFMT_LEFT, 100);// 插入第12列的列名
+	////设置行高
+	CImageList   m_l;  
+	m_l.Create(1,25,TRUE|ILC_COLOR32,1,0);  
+	m_StuInformation.SetImageList(&m_l,LVSIL_SMALL);
+	////设置字体
+	CFont m_font;
+	m_font.CreatePointFont(100, "新宋体");
+	m_StuInformation.SetFont(&m_font);
+
+	m_StuInformation.SetColumnWidth (0,80); //设置列宽
+	m_StuInformation.SetColumnWidth (1,120);
+	m_StuInformation.SetColumnWidth (2,120);
+	m_StuInformation.SetColumnWidth (3,60);
+	m_StuInformation.SetColumnWidth (4,60);
+	m_StuInformation.SetColumnWidth (5,60);
+	m_StuInformation.SetColumnWidth (6,60);
+	m_StuInformation.SetColumnWidth (7,60);
+	m_StuInformation.SetColumnWidth (8,60);
+	m_StuInformation.SetColumnWidth (9,60);
+	m_StuInformation.SetColumnWidth (10,60);
+	m_StuInformation.SetColumnWidth (11,60);
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }

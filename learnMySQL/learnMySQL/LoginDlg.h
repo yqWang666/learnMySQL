@@ -16,7 +16,7 @@ public:
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV Ö§³Ö
-
+	BOOL CLoginDlg::OnInitDialog();
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedLiLi();

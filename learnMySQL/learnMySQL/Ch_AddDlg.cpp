@@ -44,6 +44,39 @@ END_MESSAGE_MAP()
 
 // CCh_AddDlg 消息处理程序
 
+BOOL CCh_AddDlg::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+
+	// 将“关于...”菜单项添加到系统菜单中。
+
+	// IDM_ABOUTBOX 必须在系统命令范围内。
+	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
+	ASSERT(IDM_ABOUTBOX < 0xF000);
+
+	CMenu* pSysMenu = GetSystemMenu(FALSE);
+	if (pSysMenu != NULL)
+	{
+		BOOL bNameValid;
+		CString strAboutMenu;
+		bNameValid = strAboutMenu.LoadString(IDS_ABOUTBOX);
+		ASSERT(bNameValid);
+		if (!strAboutMenu.IsEmpty())
+		{
+			pSysMenu->AppendMenu(MF_SEPARATOR);
+			pSysMenu->AppendMenu(MF_STRING, IDM_ABOUTBOX, strAboutMenu);
+		}
+	}
+
+	// 设置此对话框的图标。当应用程序主窗口不是对话框时，框架将自动
+	//  执行此操作
+
+	// TODO: 在此添加额外的初始化代码
+
+	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
+}
+
+
 
 void CCh_AddDlg::OnBnClickedOk()
 {
@@ -84,6 +117,9 @@ void CCh_AddDlg::OnBnClickedOk()
     }
 	// 关闭 local_mysql 所关联的数据库连接， 一般情况下不用写。
 	mysql_close(&local_mysql);
+
+
+
 
 	CDialogEx::OnOK();
 	ClearnMySQLDlg m;
