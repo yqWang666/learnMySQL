@@ -3,6 +3,7 @@
 //
 
 #pragma once
+#include "mysql.h"
 
 
 // ClearnMySQLDlg ¶Ô»°¿ò
@@ -31,5 +32,16 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedAdd();
-	CListCtrl m_StuInformation;
+	MYSQL local_mysql;
+	MYSQL_RES* result;
+	
+	/*CListCtrl m_StuInformation;
+	CString Str_id,Str_name,Str_stuId,Str_gene;*/
+	afx_msg void OnBnClickedOk();
+	afx_msg void OnBnClickedDelete();
+	afx_msg void OnBnClickedUpdate();
+	afx_msg void OnNMRClickList1(NMHDR *pNMHDR, LRESULT *pResult);
+	afx_msg void OnFile32774();
+	afx_msg void OnFile32775();
+	afx_msg void OnFile32776();
 };

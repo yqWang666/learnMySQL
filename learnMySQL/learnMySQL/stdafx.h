@@ -37,8 +37,9 @@
 
 #include <afxcontrolbars.h>     // 功能区和控件条的 MFC 支持
 
-
-
+extern int list_row;
+extern CListCtrl m_StuInformation;
+extern CString Str_id,Str_name,Str_stuId,Str_gene;
 
 
 

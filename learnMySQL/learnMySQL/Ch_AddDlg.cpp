@@ -86,18 +86,18 @@ void CCh_AddDlg::OnBnClickedOk()
 	CString local_name = m_Add_name;
 	CString local_stuID = m_Add_stuID;
 	CString local_gene = m_Add_gene;
-	// 创建 MYSQL 对象。
+	//// 创建 MYSQL 对象。
 	MYSQL local_mysql;
 	// 初始化 MYSQL 对象。
 	mysql_init(&local_mysql);
 	// 连接数据库
 	if(!mysql_real_connect(&local_mysql,"localhost","root","root","learnmysql",3306,NULL,0))
 	{
-		AfxMessageBox(_T("connect to database failed!"));
+		AfxMessageBox(_T("连接数据库失败！"));
 	}
 	else
 	{
-		AfxMessageBox(_T("connect to database success!"));
+		//AfxMessageBox(_T("连接数据库成功！"));
 		// 设置字符集， 使程序支持中文。
 		mysql_query(&local_mysql, "set names 'gb2312'");
 	}
@@ -109,21 +109,30 @@ void CCh_AddDlg::OnBnClickedOk()
 	// mysql_query() 的返回值份很多情形， 进行判断使要注意。
 	if(mysql_query(&local_mysql,(char*)(LPCTSTR)sql_insert)==0)
 	{   
-		AfxMessageBox("insert succeed!");   
+		AfxMessageBox("数据库插入数据成功！");   
 	}
 	else
 	{
-		AfxMessageBox("insert failed!");
+		AfxMessageBox("数据库插入数据失败！");
     }
 	// 关闭 local_mysql 所关联的数据库连接， 一般情况下不用写。
 	mysql_close(&local_mysql);
 
-
-
-
 	CDialogEx::OnOK();
-	ClearnMySQLDlg m;
-	m.DoModal();
+	//ClearnMySQLDlg m;
+	//m.DoModal();
+
+	//////将增加的数据显示到listCtrl中
+	Str_id.Format("%d",local_id);
+	Str_name = m_Add_name;
+	Str_stuId= m_Add_stuID;
+	Str_gene = m_Add_gene;
+	m_StuInformation.InsertItem(list_row, _T(""));						// 插入行
+	m_StuInformation.SetItemText(list_row, 0, Str_id);				    // 设置第1列(id)
+	m_StuInformation.SetItemText(list_row, 1, Str_name);				// 设置第2列(姓名)
+	m_StuInformation.SetItemText(list_row, 2, Str_stuId);				// 设置第3列(学号)
+	m_StuInformation.SetItemText(list_row, 3, Str_gene);				// 设置第4列(性别)
+	
 }
 
 
